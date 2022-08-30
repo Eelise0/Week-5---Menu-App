@@ -1,28 +1,4 @@
-// class Dog {
-//     constructor (name, gender, breed, favoriteTreat) {
-//         this.name = name;
-//         this.gender = gender;
-//         this.breed = breed;
-//         this.favoriteTreat = favoriteTreat;
-//     }
-
-//     introduce() {
-//        console.log(`${this.name} is a ${this.gender} dog and their breed is ${this.breed}.`);
-//     }
-    
-// }
-
-// let dog1 = new Dog('Barry', 'male', 'Shiba Inu', 'hot dogs');
-// let dog2 = new Dog('Iroh', 'male', 'Chow-Chow', 'peanut butter');
-
-// dog1.introduce();
-// dog2.introduce(); 
-
-
-
-
-
-
+/*********************** TIFA'S COFFEE & SWEETS MENU APP******************/
 
 class Item {                                              ///this is the beginning of the Player class///
     constructor(name, type) {                           ///this sets up the blueprint for anything under this class///
