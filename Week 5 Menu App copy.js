@@ -85,7 +85,7 @@ class Menu {
     displayOrders() { 
         let orderString = '';        
         for (let i = 0; i < this.orders.length; i++) {        
-        orderString += i + ' # - ' + this.orders[i].name + '\n';      
+        orderString += i + '# ' + this.orders[i].name + '\n';      
     }                                                              
         alert(orderString);                                      
     }
@@ -96,17 +96,31 @@ class Menu {
         this.displayOrders();   
         this.viewOrder();
         alert('Thanks for the order! We will get to work on that straight away!');
-    
+        // this.addAnItem();
+        console.log('Test');
+        return 6;
     }                                 
 
     viewOrder() {                                
         let index =  prompt('What is the order number you want to view?');
+
+        console.log('Here', index > -1 && index < this.orders.length); //
+        
         if (index > -1 && index < this.orders.length) { 
+
+            console.log('That', this.selectedOrder);  //
+
+            console.log('This order', this.orders[index]); //
+
             this.selectedOrder = this.orders[index];
+
+            console.log('This', this.selectedOrder);  //
+
             let description = 'Order Name: ' + this.selectedOrder.name + '\n';     
         
             for(let i = 0; i < this.selectedOrder.items.length; i++) {     
-                description += i + ' # - ' + this.selectedOrder.items[i].name + '\n';                                                      
+                description += i + '# ' + this.selectedOrder.items[i].name   
+                + '\n';                                                      
             }
 
         let selection = this.showOrderMenuOptions(description);       
@@ -124,7 +138,7 @@ class Menu {
         let index = prompt('What is the order number you want to delete?');     
         if (index > -1 && index < this.orders.length) {       
             this.orders.splice(index, 1);
-            alert('Your order has been deleted. Let us know what we can do to better serve you!');               
+            alert('Your order has been deleted. Let us know what we can do better to serve you!');               
         }
     }
 
@@ -139,7 +153,7 @@ class Menu {
         - Cactuar Cold Brew             - Healer Healthy Salad`);     
                                                                         
         this.selectedOrder.items.push(new Item(name));
-                                                             
+        return 7;                                                        
     }
 
     deleteAnItem() {        
