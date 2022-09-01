@@ -6,7 +6,7 @@ class Item {
     }                                                         
 }                                                                   
 
-class Order {                                                   
+class Order {                                                       
     constructor(name) {                                     
         this.name = name;
         this.items = [];                                  
@@ -93,8 +93,8 @@ class Menu {
     createNewOrder() {                          
         let name = prompt('What name should the order be under?');      
         this.orders.push(new Order(name));
-        this.displayOrders();   
-        this.viewOrder();
+        this.selectedOrder = this.orders[this.orders.length-1]
+        this.addAnItem();
         alert('Thanks for the order! We will get to work on that straight away!');
     
     }                                 
@@ -138,6 +138,8 @@ class Menu {
         - MP Espresso                   - Titan's Scrumptious Scramble
         - Cactuar Cold Brew             - Healer Healthy Salad`);     
                                                                         
+        console.log(this);
+        
         this.selectedOrder.items.push(new Item(name));
                                                              
     }
