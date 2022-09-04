@@ -103,9 +103,10 @@ class Menu {
         let index =  prompt('What is the order number you want to view?');
         if (index > -1 && index < this.orders.length) { 
             this.selectedOrder = this.orders[index];
-            let description = 'Order Name: ' + this.selectedOrder.name + '\n';     
-        
-            for(let i = 0; i < this.selectedOrder.items.length; i++) {     
+
+            let description = 'Order Name: ' + this.selectedOrder.name + '\n';    
+
+        for(let i = 0; i < this.selectedOrder.items.length; i++) {     
                 description += i + ' # - ' + this.selectedOrder.items[i].name + '\n';                                                      
             }
 
@@ -137,9 +138,7 @@ class Menu {
         - Chocobean Latte               - Ifrit's Flaming Sandwich
         - MP Espresso                   - Titan's Scrumptious Scramble
         - Cactuar Cold Brew             - Healer Healthy Salad`);     
-                                                                        
-        console.log(this);
-        
+    
         this.selectedOrder.items.push(new Item(name));
                                                              
     }
@@ -154,3 +153,7 @@ class Menu {
 
 let menu = new Menu();
 menu.start();
+
+let cloudsOrder = new Order('Cloud');
+cloudsOrder.items.push('Chocobean Latte');
+console.log(cloudsOrder);
